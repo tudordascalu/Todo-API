@@ -1,5 +1,6 @@
 var express = require("express");
 var app = express();
+var port = process.env.PORT || 8080;
 var jTodos = [{"name":"Do groceries","status":"not completed"},{"name":"Eat pizza","status":"not completed"},{"name":"Buy avocado","status":"not completed"},{"name":"Study more","status":"not completed"},{"name":"Go to work","status":"not completed"},{"name":"Study even more","status":"not completed"}];
 app.get("/", function(req, res){
 	res.json(jTodos);
@@ -39,6 +40,6 @@ app.get("/insert/:name", function(req, res){
 	res.json({"response":"ok"});
 })
 
-app.listen(8080, function(){
-	console.log("Listening on port 80");
+app.listen(port, function(){
+	console.log("Listening on port 8080");
 })
